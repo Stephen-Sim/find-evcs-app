@@ -18,6 +18,10 @@ Welcome to the Find EVCS project, developed as part of the BITP 3435 course. Thi
 - **Login Page:** Users can log in as an admin or access the main application as a regular user.
 <img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/a030b7e2-50cf-4d7b-8a2d-6737a1d57bcb" height="500">
 
+**Default Admin Credentials:**
+- Username: yung huey
+- Password: abc123
+
 ### 2. Admin Functionality
 
 - **CRUD Operations:** Admins can Create, Read, Update, and Delete EV stations within the system.
