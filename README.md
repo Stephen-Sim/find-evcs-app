@@ -1,4 +1,4 @@
-# BITP 3435 Assignment Project - Find EVCS
+# BITP 3453 Group Project - Find EVCS
 
 ## Overview
 
