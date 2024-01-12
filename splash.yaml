@@ -1,0 +1,9 @@
+flutter_native_splash:
+  color: "#CBC3E3"
+  image: "assets/imgs/logo.png"
+
+  android_12:
+    color: "#CBC3E3"
+    image: "assets/imgs/logo.png"
+
+  web: false
