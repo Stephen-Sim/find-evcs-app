@@ -58,6 +58,10 @@ Welcome to the Find EVCS project, developed as part of the BITP 3435 course. Thi
 
 ## Database Structure
 
+### Entity Relationship Diagram
+
+<img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/1f3f187f-bad4-40d1-a770-9f014737236b" width="800">
+
 ### 1. admins Table:
 
 Fields:
@@ -76,7 +80,7 @@ Fields:
 - name: Name of the EV charging station.
 - address: Location address of the charging station.
 - total_charging_stations: Number of charging stations available.
-- image: Path to the image representing the charging station.
+- image: Base64-encoded string, representing the station's image.
 - latitude: Latitude of the charging station location.
 - longitude: Longitude of the charging station location.
 - admin_id: Foreign key linking to the admins table, representing the admin who manages the station.
