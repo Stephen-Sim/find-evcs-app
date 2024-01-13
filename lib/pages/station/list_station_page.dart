@@ -6,6 +6,7 @@ import 'package:find_evcs/pages/station/create_station_page.dart';
 import 'package:find_evcs/pages/station/edit_station_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ListStationPage extends StatefulWidget {
   const ListStationPage({super.key});
@@ -33,7 +34,9 @@ class _ListStationPageState extends State<ListStationPage> {
               Icons.logout,
               color: Color.fromARGB(255, 49, 45, 45),
             ),
-            onPressed: () {
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.remove('adminId');
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
@@ -87,7 +90,9 @@ class _ListStationPageState extends State<ListStationPage> {
                                 .add(GetStationsEvent());
 
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Station is ${value == "edit" ? "edited" : "deleted"}.")),
+                              SnackBar(
+                                  content: Text(
+                                      "Station is ${value == "edit" ? "edited" : "deleted"}.")),
                             );
                           }
                         });
