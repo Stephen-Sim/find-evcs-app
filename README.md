@@ -50,9 +50,54 @@ Welcome to the Find EVCS project, developed as part of the BITP 3435 course. Thi
 
 1. Clone the GitHub repository: `git clone https://github.com/Stephen-Sim/find-evcs-api`
 2. Navigate to the project directory: `cd your-repo`
-3. Install dependencies: `composer install`
-4. Set up the database: `php artisan migrate`
-5. Seed the database: `php artisan db:seed`
+3. Create a MySQL database named `findevcs`.
+4. Configure the database in the `.env` file with your MySQL credentials.
+5. Install dependencies: `composer install`
+6. Set up the database: `php artisan migrate`
+7. Seed the database: `php artisan db:seed`
+
+## Database Structure
+
+### Entity Relationship Diagram
+
+<img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/1f3f187f-bad4-40d1-a770-9f014737236b" width="800">
+
+### 1. admins Table:
+
+Fields:
+
+- id: Auto-incremented primary key.
+- username: Unique username for the admin.
+- password: Password for admin login.
+
+Purpose: This table stores information about administrators who have access to perform CRUD operations on EV stations. Each admin has a unique username and password for authentication.
+
+### 2. stations Table:
+
+Fields:
+
+- id: Auto-incremented primary key.
+- name: Name of the EV charging station.
+- address: Location address of the charging station.
+- total_charging_stations: Number of charging stations available.
+- image: Base64-encoded string, representing the station's image.
+- latitude: Latitude of the charging station location.
+- longitude: Longitude of the charging station location.
+- admin_id: Foreign key linking to the admins table, representing the admin who manages the station.
+  
+Purpose: This table stores information about EV charging stations, including their location, capacity, and the admin responsible for managing them.
+
+### 3. reviews Table:
+
+Fields:
+
+- id: Auto-incremented primary key.
+- rating: Numeric rating given by a user for a charging station.
+- description: Textual description or comment provided by the user in the review.
+- guest_name: Name of the user leaving the review.
+- station_id: Foreign key linking to the stations table, representing the charging station being reviewed.
+  
+Purpose: This table stores user reviews for specific EV charging stations, including the rating, description, and the user's name. The station_id foreign key establishes a relationship with the corresponding charging station.
 
 ## Usage
 
