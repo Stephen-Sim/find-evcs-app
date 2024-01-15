@@ -151,12 +151,19 @@ class _MapPageState extends State<MapPage> {
     return await Geolocator.getCurrentPosition();
   }
 
-  void _updateMarkerPosition(LatLng latLng) {
+  void _updateMarkerPosition(LatLng latLng) async {
+
+    final chargerIcon = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(6, 6)),
+      'assets/imgs/charger.png',
+    );
+
     markerList.clear();
     markerList.add(
       Marker(
         markerId: const MarkerId('currentLocation'),
         position: latLng,
+        icon: chargerIcon
       ),
     );
     _getAddressFromLatLng(latLng);
@@ -224,7 +231,7 @@ class _MapPageState extends State<MapPage> {
   }
 
   Future<void> displayPrediction(
-      Prediction p, ScaffoldState? currentState) async {
+    Prediction p, ScaffoldState? currentState) async {
     print("display prediction");
     GoogleMapsPlaces places = GoogleMapsPlaces(
         apiKey: gApiKey,
@@ -237,12 +244,18 @@ class _MapPageState extends State<MapPage> {
     userAddress = "${detail.result.name!} ${detail.result.formattedAddress!}";
 
     markerList.clear();
+
+    final chargerIcon = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(6, 6)),
+      'assets/imgs/charger.png',
+    );
+
     //  put new marker
     markerList.add(Marker(
       markerId: const MarkerId("0"),
       position: LatLng(lat, lng),
       infoWindow: InfoWindow(title: detail.result.name),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+      icon: chargerIcon,
     ));
 
     setState(() {});

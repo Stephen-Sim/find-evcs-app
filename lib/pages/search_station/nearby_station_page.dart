@@ -75,13 +75,18 @@ class _NearByStationPageState extends State<NearByStationPage> {
     return await Geolocator.getCurrentPosition();
   }
 
-  void _updateMarkerPosition(LatLng latLng) {
+  void _updateMarkerPosition(LatLng latLng) async {
+    final chargerIcon = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(6, 6)),
+      'assets/imgs/charger.png',
+    );
+
     markerList.clear();
     markerList.add(
       Marker(
-        markerId: const MarkerId('currentLocation'),
-        position: latLng,
-      ),
+          markerId: const MarkerId('currentLocation'),
+          position: latLng,
+          icon: chargerIcon),
     );
     _getAddressFromLatLng(latLng);
     setState(() {});
@@ -196,13 +201,18 @@ class _NearByStationPageState extends State<NearByStationPage> {
     final lng = userLng = detail.result.geometry!.location.lng;
     userAddress = "${detail.result.name!} ${detail.result.formattedAddress!}";
 
+    final chargerIcon = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(6, 6)),
+      'assets/imgs/charger.png',
+    );
+
     markerList.clear();
     //  put new marker
     markerList.add(Marker(
       markerId: const MarkerId("0"),
       position: LatLng(lat, lng),
       infoWindow: InfoWindow(title: detail.result.name),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+      icon: chargerIcon,
     ));
 
     setState(() {});
@@ -225,14 +235,20 @@ class _NearByStationPageState extends State<NearByStationPage> {
       ),
       backgroundColor: Color.fromRGBO(203, 195, 227, 1),
       body: BlocListener<NearByStationBloc, NearByStationState>(
-        listener: (context, state) {
+        listener: (context, state) async {
           if (state is NearByStationLoaded) {
             _nearbystations = state.stations;
+
+            final chargerIcon = await BitmapDescriptor.fromAssetImage(
+              ImageConfiguration(size: Size(6, 6)),
+              'assets/imgs/charger.png',
+            );
 
             final Set<Marker> nearbyMarkers = _nearbystations.map((station) {
               return Marker(
                   markerId: MarkerId(station.id.toString()),
                   position: LatLng(station.latitude!, station.longitude!),
+                  icon: chargerIcon,
                   onTap: () {
                     _onMarkerTapped(station);
                   });
