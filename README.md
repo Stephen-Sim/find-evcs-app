@@ -36,7 +36,7 @@ Welcome to the Find EVCS project, developed as part of the BITP 3435 course. Thi
 - **View EV Stations:** Regular users can view EV stations within a 10km radius of their location.
 - **Leave Reviews:** Users can provide reviews for EV stations.
 
-<img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/3f419cf2-d9b8-4ebc-9e77-329886ad5715" height="500">
+<img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/e5ee0a98-5192-45d1-b397-ce5cd92b2ef8" height="500">
 
 <img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/7cbaeca7-f73b-4321-9c08-d9eca23cf904" height="500">
 
