@@ -108,3 +108,5 @@ Purpose: This table stores user reviews for specific EV charging stations, inclu
 
 
 Thank you for using Find EVCS! If you have any questions or concerns, feel free to contact our group members.
+
+
