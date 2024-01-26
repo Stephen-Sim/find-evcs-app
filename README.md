@@ -19,6 +19,7 @@ Welcome to the Find EVCS project, developed as part of the BITP 3435 course. Thi
 <img src="https://github.com/Stephen-Sim/find-evcs-app/assets/74543535/a030b7e2-50cf-4d7b-8a2d-6737a1d57bcb" height="500">
 
 **Default Admin Credentials:**
+
 - Username: yung huey
 - Password: abc123
 
