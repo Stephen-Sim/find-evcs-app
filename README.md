@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Find EVCS project, developed as part of the BITP 3435 course. This mobile app, created using Flutter, aims to provide users with the ability to locate Electric Vehicle Charging Stations (EVCS) around them. The system features a login page with options for both admin and regular users. Admins have the ability to perform CRUD (Create, Read, Update, Delete) operations on EV stations, while regular users can view stations within a 10km radius and leave reviews.
+Welcome to the Find EVCS project, developed as part of the BITP 3435 course. This mobile app is created using Flutter, aims to provide users with the ability to locate Electric Vehicle Charging Stations (EVCS) around them. The system features a login page with options for both admin and regular users. Admins have the ability to perform CRUD (Create, Read, Update, Delete) operations on EV stations, while regular users can view stations within a 10km radius and leave reviews.
 
 ## Group Members
 
